@@ -21,11 +21,7 @@
 go.work
 
 # Binary files
-tracker
-
-# DB stuff
-tracker.db*
-.tracker.db-litestream
+tracker-pg
 
 # Dev config
 .envrc
