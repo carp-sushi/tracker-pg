@@ -1,0 +1,11 @@
+# database
+export DB_DIALECT="postgres"
+export DB_DSN="host=localhost user=postgres password=password1 dbname=tracker port=5432 sslmode=disable"
+
+# gin
+export DISABLE_COLOR=1
+export GIN_MODE=release
+export PORT=8080
+
+# blockchain
+export MAINNET=false
