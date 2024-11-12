@@ -78,14 +78,13 @@ func execPragmas(db *gorm.DB) error {
 }
 
 // Lookup db connection params from env vars
-func lookupConnectParams() (string, string) {
-	dialect, ok := os.LookupEnv("DB_DIALECT")
-	if !ok {
+func lookupConnectParams() (dialect string, dsn string) {
+	var ok bool
+	if dialect, ok = os.LookupEnv("DB_DIALECT"); !ok {
 		log.Panicf("DB_DIALECT not set")
 	}
-	dsn, ok := os.LookupEnv("DB_DSN")
-	if !ok {
+	if dsn, ok = os.LookupEnv("DB_DSN"); !ok {
 		log.Panicf("DB_DSN not set")
 	}
-	return dialect, dsn
+	return
 }

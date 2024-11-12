@@ -36,3 +36,8 @@ func NewPageParams(cursor uint64, limit int) PageParams {
 		Limit:  limit,
 	}
 }
+
+// DefaultPageParams creates new default pagination parameters.
+func DefaultPageParams() PageParams {
+	return NewPageParams(0, 10)
+}

@@ -1,5 +1,5 @@
 # database
-export DB_DIALECT="postgres"
+export DB_DIALECT=postgres
 export DB_DSN="host=localhost user=postgres password=password1 dbname=tracker port=5432 sslmode=disable"
 
 # gin

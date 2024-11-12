@@ -17,7 +17,7 @@ func createTestDB(t *testing.T) *gorm.DB {
 		t.Fatalf("failed to connect to test database: %+v", err)
 	}
 	if err := database.RunMigrations(db); err != nil {
-		t.Fatalf("failed to run database migrations: %+v", err)
+		t.Fatalf("failed to run migrations on test database: %+v", err)
 	}
 	return db
 }
@@ -25,7 +25,7 @@ func createTestDB(t *testing.T) *gorm.DB {
 func TestCampaignRepo(t *testing.T) {
 	// Setup
 	db := createTestDB(t)
-	account := domain.NewAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz2")
+	account := domain.MustValidateAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz2")
 	campaignRepo := repo.NewCampaignRepo(db)
 
 	// Create
@@ -41,7 +41,7 @@ func TestCampaignRepo(t *testing.T) {
 	if _, err := campaignRepo.GetCampaign(campaign.ID); err != nil {
 		t.Fatalf("failed to get campaign: %+v", err)
 	}
-	params := domain.NewPageParams(0, 10)
+	params := domain.DefaultPageParams()
 	if page := campaignRepo.GetCampaigns(account, params); len(page.Data) != 1 {
 		t.Fatalf("got unexpected number of campaigns")
 	}
@@ -54,21 +54,21 @@ func TestReferralRepo(t *testing.T) {
 	referralRepo := repo.NewReferralRepo(db)
 
 	// Base campaign
-	referer := domain.NewAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz3")
+	referer := domain.MustValidateAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz3")
 	campaign, err := campgaignRepo.CreateCampaign(referer, "Referral Unit Testing")
 	if err != nil {
 		t.Fatalf("failed to create referral campaign: %+v", err)
 	}
 
 	// Create
-	referee := domain.NewAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz4")
+	referee := domain.MustValidateAccount("tp1mrzpjszjs6dc5e8fwy23trnz775rwqvhpzzzz4")
 	referral, err := referralRepo.CreateReferral(campaign.ID, referee)
 	if err != nil {
 		t.Fatalf("failed to create referral: %+v", err)
 	}
 
 	// Read
-	params := domain.NewPageParams(0, 10)
+	params := domain.DefaultPageParams()
 	if page := referralRepo.GetReferrals(campaign.ID, params); len(page.Data) != 1 {
 		t.Fatalf("got unexpected number of referrals for campaign")
 	}

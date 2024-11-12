@@ -22,9 +22,9 @@ func NewCampaignRepo(db *gorm.DB) CampaignRepo {
 
 // GetCampaign gets a campaign by ID
 func (self CampaignRepo) GetCampaign(campaignID domain.CampaignID) (campaign domain.Campaign, err error) {
-	var result model.Campaign
-	if result, err = query.SelectCampaign(self.db, campaignID.String()); err == nil {
-		campaign = result.ToDomain()
+	var entity model.Campaign
+	if entity, err = query.SelectCampaign(self.db, campaignID.String()); err == nil {
+		campaign = entity.ToDomain()
 	}
 	return
 }
@@ -34,20 +34,20 @@ func (self CampaignRepo) GetCampaigns(
 	account domain.Account, pageParams domain.PageParams) domain.Page[domain.Campaign] {
 
 	var nextCursor uint64
-	results := query.SelectCampaigns(self.db, account.String(), pageParams.Cursor, pageParams.Limit)
-	campaigns := make([]domain.Campaign, len(results))
-	for i, result := range results {
-		campaigns[i] = result.ToDomain()
-		nextCursor = max(nextCursor, uint64(result.CreatedAt))
+	entities := query.SelectCampaigns(self.db, account.String(), pageParams.Cursor, pageParams.Limit)
+	campaigns := make([]domain.Campaign, len(entities))
+	for i, entity := range entities {
+		campaigns[i] = entity.ToDomain()
+		nextCursor = max(nextCursor, uint64(entity.CreatedAt))
 	}
 	return domain.NewPage(nextCursor, pageParams.Limit, campaigns)
 }
 
 // CreateCampaign creates a new named campaign
 func (self CampaignRepo) CreateCampaign(account domain.Account, name string) (campaign domain.Campaign, err error) {
-	var result model.Campaign
-	if result, err = query.InsertCampaign(self.db, account.String(), name); err == nil {
-		campaign = result.ToDomain()
+	var entity model.Campaign
+	if entity, err = query.InsertCampaign(self.db, account.String(), name); err == nil {
+		campaign = entity.ToDomain()
 	}
 	return
 }
