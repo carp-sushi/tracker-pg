@@ -3,7 +3,7 @@ package model
 import (
 	"strings"
 
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/domain"
 )
 
 // Campaign represents a typed campaign for a blockchain account.

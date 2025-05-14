@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/carp-cobain/tracker-pg/domain"
-	"github.com/carp-cobain/tracker-pg/service"
+	"github.com/carp-sushi/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/service"
 )
 
 // ReferralVerifier verifies that referrals have placed an order on the exchange.

@@ -1,6 +1,6 @@
 package service
 
-import "github.com/carp-cobain/tracker-pg/domain"
+import "github.com/carp-sushi/tracker-pg/domain"
 
 type Account = domain.Account
 type Campaign = domain.Campaign

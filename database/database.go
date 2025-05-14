@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/carp-cobain/tracker-pg/database/model"
+	"github.com/carp-sushi/tracker-pg/database/model"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"

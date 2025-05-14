@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/domain"
 )
 
 // CreateCampaignRequest is the request type for creating campaigns.

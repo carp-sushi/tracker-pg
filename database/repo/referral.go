@@ -3,9 +3,9 @@ package repo
 import (
 	"fmt"
 
-	"github.com/carp-cobain/tracker-pg/database/model"
-	"github.com/carp-cobain/tracker-pg/database/query"
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/database/model"
+	"github.com/carp-sushi/tracker-pg/database/query"
+	"github.com/carp-sushi/tracker-pg/domain"
 
 	"gorm.io/gorm"
 )

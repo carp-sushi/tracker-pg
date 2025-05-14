@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/carp-cobain/tracker-pg/domain"
-	"github.com/carp-cobain/tracker-pg/service"
-	"github.com/carp-cobain/tracker-pg/web/dto"
+	"github.com/carp-sushi/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/service"
+	"github.com/carp-sushi/tracker-pg/web/dto"
 
 	"github.com/gin-gonic/gin"
 )

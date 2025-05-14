@@ -4,10 +4,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/carp-cobain/tracker-pg/database"
-	"github.com/carp-cobain/tracker-pg/database/repo"
-	"github.com/carp-cobain/tracker-pg/processor"
-	"github.com/carp-cobain/tracker-pg/web/handler"
+	"github.com/carp-sushi/tracker-pg/database"
+	"github.com/carp-sushi/tracker-pg/database/repo"
+	"github.com/carp-sushi/tracker-pg/processor"
+	"github.com/carp-sushi/tracker-pg/web/handler"
 
 	"github.com/gin-gonic/gin"
 	"github.com/robfig/cron/v3"

@@ -3,7 +3,7 @@ package handler
 import (
 	"strconv"
 
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/domain"
 	"github.com/gin-gonic/gin"
 )
 

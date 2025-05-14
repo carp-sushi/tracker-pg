@@ -3,10 +3,10 @@ package repo_test
 import (
 	"testing"
 
-	"github.com/carp-cobain/tracker-pg/database"
-	"github.com/carp-cobain/tracker-pg/database/model"
-	"github.com/carp-cobain/tracker-pg/database/repo"
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/database"
+	"github.com/carp-sushi/tracker-pg/database/model"
+	"github.com/carp-sushi/tracker-pg/database/repo"
+	"github.com/carp-sushi/tracker-pg/domain"
 
 	"gorm.io/gorm"
 )

@@ -1,7 +1,7 @@
 package query
 
 import (
-	"github.com/carp-cobain/tracker-pg/database/model"
+	"github.com/carp-sushi/tracker-pg/database/model"
 	"gorm.io/gorm"
 )
 

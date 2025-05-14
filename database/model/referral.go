@@ -3,7 +3,7 @@ package model
 import (
 	"strings"
 
-	"github.com/carp-cobain/tracker-pg/domain"
+	"github.com/carp-sushi/tracker-pg/domain"
 )
 
 // Referral represents a blockchain account that signed up using a referral campaign.
